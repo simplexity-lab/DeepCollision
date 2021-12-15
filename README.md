@@ -49,7 +49,7 @@ More details of Hyperparameters of DQN used in DeepCollision can be accessed her
 ## REST API Endpoints
 
 ### REST API List
-To view all the implemented environment configuration REST API endpoints, look at [full-list](https://github.com/simplexity-lab/DeepCollision/blob/main/rest-api/README.md).
+To view all the implemented environment configuration REST API endpoints, please look at [full-list](https://github.com/simplexity-lab/DeepCollision/blob/main/rest-api/README.md).
 
 ### Usage
 
