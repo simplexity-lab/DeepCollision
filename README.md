@@ -1,7 +1,7 @@
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
-# Public Data for Peer Review of DeepCollision
+# DeepCollision: Learning Configurations of Operating Environment of Autonomous Vehicles to Maximize their Collisions
 
-To facilitate reviewing our proposed approach, reviewers please refer to the corresponding data in this repository!<br/>
+> To facilitate reviewing our proposed approach, reviewers please refer to the corresponding data in this repository.<br/>
 
 This repository contains:
 
