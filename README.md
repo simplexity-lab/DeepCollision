@@ -56,7 +56,7 @@ To view all the implemented environment configuration REST API endpoints, please
 ## Related Efforts
 
 - [LiveTCM](https://github.com/simplexity-lab/LiveTCM): Restricted Natural Language and Model-based Adaptive Test Generation for Autonomous Driving
-- [SPECTRE](https://github.com/ssbse2021): Search-Based Selection and Prioritization of Test Scenarios for Autonomous Driving Systems
+- [SPECTRE](https://github.com/ssbse2021/SPECTRE): Search-Based Selection and Prioritization of Test Scenarios for Autonomous Driving Systems
 
 ## Maintainers
 [@ChengjieLu](https://github.com/ForresterLu),
