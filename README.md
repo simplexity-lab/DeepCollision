@@ -22,13 +22,14 @@ This repository contains:
 - [REST API Endpoints](#rest-api-endpoints)
   - [REST API List](#rest-api-list)
   - [Usage](#usage)
+- [Maintainers](#maintainers)
 
-### Contributions
+## Contributions
 1. With the aim to test ADSs, we propose a novel RL-based approach to learn operating environment configurations of autonomous vehicles, including formalizing environment configuration learning as an MDP and adopting DQN as the RL solution;
 2. To handle the environment configuration process of an autonomous vehicle, we present a lightweight and extensible **DeepCollision** framework providing 52 REST API endpoints to configure the environment and obtain states of both the autonomous vehicle and its operating environment; and
 3. We conducted an extensive empirical study with an industrial scale ADS and simulator and results show that DeepCollision outperforms the baselines. Further, we provide recommendations of configuring DeepCollision with the most suitable time interval setting based on different road structures.
 
-### Overview of DeepCollision
+## Overview of DeepCollision
 
 **DeepCollision** learns environment configurations to maximize collisions of an Autonomous Vehicle Under Test (AVUT). As shown in the following figure, DeepCollision employs a *Simulator* (e.g., **[LGSVL](https://www.svlsimulator.com/)**) to simulate the *Testing Environment* comprising the AVUT and its operating environment. DeepCollision also integrates with an *Autopilot Algorithm Platform* (e.g., the Baidu **[Apollo](https://github.com/ApolloAuto/apollo)**) deployed on the AVUT to enable its autonomous driving.
 
@@ -44,9 +45,12 @@ At each time step t, the information about the AVUT (e.g., its driving and colli
 
 More details of Hyperparameters of DQN used in DeepCollision can be accessed here [hyperparameter settings](https://github.com/simplexity-lab/DeepCollision/blob/main/algorithms/figures/hyperparameter_settings.png).
 
-### REST API Endpoints
+## REST API Endpoints
 
-#### REST API List
+### REST API List
 To view all the implemented environment configuration REST API endpoints, look at [full-list](https://github.com/simplexity-lab/DeepCollision/blob/main/rest-api/README.md).
 
-#### Usage
+### Usage
+
+## Maintainers
+[@ChengjieLu](https://github.com/ForresterLu).
