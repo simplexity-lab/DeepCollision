@@ -59,4 +59,5 @@ To view all the implemented environment configuration REST API endpoints, look a
 - [SPECTRE](https://github.com/ssbse2021): Search-Based Selection and Prioritization of Test Scenarios for Autonomous Driving Systems
 
 ## Maintainers
-[@ChengjieLu](https://github.com/ForresterLu).
+[@ChengjieLu](https://github.com/ForresterLu),
+[@YizeShi](https://github.com/Misaka11)
