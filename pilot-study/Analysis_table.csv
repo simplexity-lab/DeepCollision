@@ -1,0 +1,9 @@
+Experiment,Average collision probability,Average collision number,Average time
+8_para_road_a,0.28,1.67,47.33
+10_para_road_a,0.26,1.27,41
+12_para_road_a,0.37,2.3,49.83
+random_road_a,0.12,0.43,49.5
+8_para_road_b,0.28,1.97,59.17
+10_para_road_b,0.26,1.97,65.67
+12_para_road_b,0.33,2.37,70.5
+random_road_b,0.08,0.5,49
