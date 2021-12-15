@@ -22,6 +22,7 @@ This repository contains:
 - [REST API Endpoints](#rest-api-endpoints)
   - [REST API List](#rest-api-list)
   - [Usage](#usage)
+- [Related Efforts](#related-efforts)
 - [Maintainers](#maintainers)
 
 ## Contributions
@@ -51,6 +52,11 @@ More details of Hyperparameters of DQN used in DeepCollision can be accessed her
 To view all the implemented environment configuration REST API endpoints, look at [full-list](https://github.com/simplexity-lab/DeepCollision/blob/main/rest-api/README.md).
 
 ### Usage
+
+## Related Efforts
+
+- [LiveTCM](https://github.com/simplexity-lab/LiveTCM): Restricted Natural Language and Model-based Adaptive Test Generation for Autonomous Driving
+- [SPECTRE](https://github.com/ssbse2021): 
 
 ## Maintainers
 [@ChengjieLu](https://github.com/ForresterLu).
