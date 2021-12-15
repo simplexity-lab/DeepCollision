@@ -1,10 +1,10 @@
 # Public Data for Peer Review of DeepCollision
 
 > To facilitate reviewing our proposed approach, reviewers please refer to the corresponding data in this repository:<br/>
-> **[DeepCollision Algorithm](https://github.com/DeepCollision/DeepCollisionData/tree/main/DeepCollison%20Algorithm)**, pseudocode for DeepCollision and Hyper-parameters of DQN in DeepCollision;<br/>
-> **[Formal Experiment](https://github.com/DeepCollision/DeepCollisionData/tree/main/Formal%20Experiment)**, all data and plots for the formal experiment;<br/> 
-> **[Piloty Study](https://github.com/DeepCollision/DeepCollisionData/tree/main/Pilot%20Study)**, all data and plots for the pilot study;<br/> 
-> **[REST APIs](https://github.com/DeepCollision/DeepCollisionData/tree/main/REST%20APIs)**, one example and all implemented REST APIs for environment parameter configurations.
+> **[algorithms](https://github.com/simplexity-lab/DeepCollision/tree/main/algorithms)**, pseudocode for DeepCollision and Hyper-parameters of DQN in DeepCollision;<br/>
+> **[formal-experiment](https://github.com/simplexity-lab/DeepCollision/tree/main/formal-experiment)**, all data and plots for the formal experiment;<br/> 
+> **[pilot-study](https://github.com/simplexity-lab/DeepCollision/tree/main/pilot-study)**, all data and plots for the pilot study;<br/> 
+> **[rest-api](https://github.com/simplexity-lab/DeepCollision/tree/main/rest-api)**, one example and all implemented REST APIs for environment parameter configurations.
 
 ## Overview of DeepCollision
 
