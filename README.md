@@ -5,10 +5,10 @@ To facilitate reviewing our proposed approach, reviewers please refer to the cor
 
 This repository contains:
 
-1. The **[algorithm](https://github.com/simplexity-lab/DeepCollision/tree/main/algorithms)** of DeepCollision, which includes pseudocode for DQN-Based environment configuration and the DQN hyperparameter settings;
-2. All raw data and plots for the **[pilot-study](https://github.com/simplexity-lab/DeepCollision/tree/main/pilot-study)**;
-3. A dataset contains all the raw data and analysis results for the **[formal-experiment](https://github.com/simplexity-lab/DeepCollision/tree/main/formal-experiment)**;
-4. The **[rest-api](https://github.com/simplexity-lab/DeepCollision/tree/main/rest-api)** endpoints for environment configuration and one example to show the **[useage](https://github.com/simplexity-lab/DeepCollision/blob/main/rest-api/README.md)** of the APIs.
+1. **[algorithms](https://github.com/simplexity-lab/DeepCollision/tree/main/algorithms)** - The algorithm of DeepCollision, which includes pseudocode for DQN-Based environment configuration and the DQN hyperparameter settings;
+2. **[pilot-study](https://github.com/simplexity-lab/DeepCollision/tree/main/pilot-study)** - All raw data and plots for the pilot study;
+3. **[formal-experiment](https://github.com/simplexity-lab/DeepCollision/tree/main/formal-experiment)** - A dataset contains all the raw data and analysis results for the formal experiment;
+4. **[rest-api](https://github.com/simplexity-lab/DeepCollision/tree/main/rest-api)** - The REST API endpoints for environment configuration and one **[example](https://github.com/simplexity-lab/DeepCollision/blob/main/rest-api/README.md)** to show the usage of the APIs.
 
 <!-- > To facilitate reviewing our proposed approach, reviewers please refer to the corresponding data in this repository:<br/>
 > **[algorithms](https://github.com/simplexity-lab/DeepCollision/tree/main/algorithms)**, pseudocode for DeepCollision and Hyper-parameters of DQN in DeepCollision;<br/>
@@ -16,6 +16,15 @@ This repository contains:
 > **[pilot-study](https://github.com/simplexity-lab/DeepCollision/tree/main/pilot-study)**, all data and plots for the pilot study;<br/> 
 > **[rest-api](https://github.com/simplexity-lab/DeepCollision/tree/main/rest-api)**, one example and all implemented REST APIs for environment parameter configurations.
  -->
+## Table of Contents
+- [Contributions](#contributions)
+- [Overview of DeepCollision](#overview-of-deepcollision)
+
+## Contributions
+1. With the aim to test ADSs, we propose a novel RL-based approach to learn operating environment configurations of autonomous vehicles, including formalizing environment configuration learning as an MDP and adopting DQN as the RL solution;
+2. To handle the environment configuration process of an autonomous vehicle, we present a lightweight and extensible **DeepCollision** framework providing 52 REST API endpoints to configure the environment and obtain states of both the autonomous vehicle and its operating environment; and
+3. We conducted an extensive empirical study with an industrial scale ADS and simulator and results show that DeepCollision outperforms the baselines. Further, we provide recommendations of configuring DeepCollision with the most suitable time interval setting based on different road structures.
+
 ## Overview of DeepCollision
 
 **DeepCollision** learns environment configurations to maximize collisions of an Autonomous Vehicle Under Test (AVUT). As shown in the following figure, DeepCollision employs a *Simulator* (e.g., LGSVL) to simulate the *Testing Environment* comprising the AVUT and its operating environment. DeepCollision also integrates with an *Autopilot Algorithm Platform* (e.g., the Baidu Apollo ) deployed on the AVUT to enable its autonomous driving.
