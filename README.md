@@ -6,7 +6,7 @@
 This repository contains:
 
 1. **[algorithms](https://github.com/simplexity-lab/DeepCollision/tree/main/algorithms)** - The algorithm of DeepCollision, which includes pseudocode for DQN-Based environment configuration and the DQN hyperparameter settings;
-2. **[pilot-study](https://github.com/simplexity-lab/DeepCollision/tree/main/pilot-study)** - All raw data and plots for the pilot study;
+2. **[pilot-study](https://github.com/simplexity-lab/DeepCollision/tree/main/pilot-study)** - All the raw data and plots for the pilot study;
 3. **[formal-experiment](https://github.com/simplexity-lab/DeepCollision/tree/main/formal-experiment)** - A dataset contains all the raw data and analysis results for the formal experiment;
 4. **[rest-api](https://github.com/simplexity-lab/DeepCollision/tree/main/rest-api)** - The REST API endpoints for environment configuration and one [example](https://github.com/simplexity-lab/DeepCollision/blob/main/rest-api/README.md) to show the usage of the APIs.
 
