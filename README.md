@@ -1,11 +1,21 @@
+[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 # Public Data for Peer Review of DeepCollision
 
-> To facilitate reviewing our proposed approach, reviewers please refer to the corresponding data in this repository:<br/>
+To facilitate reviewing our proposed approach, reviewers please refer to the corresponding data in this repository!<br/>
+
+This repository contains:
+
+1. The **[algorithm](https://github.com/simplexity-lab/DeepCollision/tree/main/algorithms)** of DeepCollision, which includes pseudocode for DQN-Based environment configuration and the DQN hyperparameter settings;
+2. All raw data and plots for the **[pilot-study](https://github.com/simplexity-lab/DeepCollision/tree/main/pilot-study)**;
+3. A dataset contains all the raw data and analysis results for the **[formal-experiment](https://github.com/simplexity-lab/DeepCollision/tree/main/formal-experiment)**;
+4. The **[rest-api](https://github.com/simplexity-lab/DeepCollision/tree/main/rest-api)** endpoints for environment configuration and one example to show the **[useage](https://github.com/simplexity-lab/DeepCollision/blob/main/rest-api/README.md)** of the APIs.
+
+<!-- > To facilitate reviewing our proposed approach, reviewers please refer to the corresponding data in this repository:<br/>
 > **[algorithms](https://github.com/simplexity-lab/DeepCollision/tree/main/algorithms)**, pseudocode for DeepCollision and Hyper-parameters of DQN in DeepCollision;<br/>
 > **[formal-experiment](https://github.com/simplexity-lab/DeepCollision/tree/main/formal-experiment)**, all data and plots for the formal experiment;<br/> 
 > **[pilot-study](https://github.com/simplexity-lab/DeepCollision/tree/main/pilot-study)**, all data and plots for the pilot study;<br/> 
 > **[rest-api](https://github.com/simplexity-lab/DeepCollision/tree/main/rest-api)**, one example and all implemented REST APIs for environment parameter configurations.
-
+ -->
 ## Overview of DeepCollision
 
 **DeepCollision** learns environment configurations to maximize collisions of an Autonomous Vehicle Under Test (AVUT). As shown in the following figure, DeepCollision employs a *Simulator* (e.g., LGSVL) to simulate the *Testing Environment* comprising the AVUT and its operating environment. DeepCollision also integrates with an *Autopilot Algorithm Platform* (e.g., the Baidu Apollo ) deployed on the AVUT to enable its autonomous driving.
