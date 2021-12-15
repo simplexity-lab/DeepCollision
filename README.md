@@ -10,7 +10,7 @@
 
 **DeepCollision** learns environment configurations to maximize collisions of an Autonomous Vehicle Under Test (AVUT). As shown in the following figure, DeepCollision employs a *Simulator* (e.g., LGSVL) to simulate the *Testing Environment* comprising the AVUT and its operating environment. DeepCollision also integrates with an *Autopilot Algorithm Platform* (e.g., the Baidu Apollo ) deployed on the AVUT to enable its autonomous driving.
 
-<div align=center><img src="https://github.com/DeepCollision/DeepCollisionData/blob/main/figures/Overview.png" style="zoom:20%" /></div>
+<div align=center><img src="https://github.com/simplexity-lab/DeepCollision/blob/main/figures/Overview.png" style="zoom:20%" /></div>
 
 **DeepCollision** employs a DQN component to generate a set of actions to configure the environment of the AVUT, e.g., weather condition, time of day. At each time step t, the DQN component observes a state S<sub>t</sub> describing the current states of the AVUT and its environment. With the state, DeepCollision decides an action A<sub>t</sub> based on the Q-network with the policy <a href="https://www.codecogs.com/eqnedit.php?latex=\pi" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\pi" title="\pi" /></a>. With our developed *Environment Configuration REST API*, such an action A<sub>t</sub> can be considered as an HTTP request for accessing the simulator to introduce new environment configurations. 
 
