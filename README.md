@@ -65,6 +65,9 @@ $ python -m pip install requests
 
 We have integrated the REST APIs into LGSVL and Apollo and put the into online server, users can see the effects of the environment configuration via this [link](http://101.35.135.164:8888/).
 
+![image](https://user-images.githubusercontent.com/26716009/146328970-9812cb26-861d-49e3-8595-1fbe830c62be.png)
+
+
 <!-- #### Example -->
 #### Step 1: Load scene and generate AVUT's initial position
 
