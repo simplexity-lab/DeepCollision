@@ -54,7 +54,7 @@ To view all the implemented environment configuration REST API endpoints, please
 ### Usage
 
 #### Prerequisite
-Users can access servers with Apollo and LGSVL deployed through our provided REST APIs. To call the APIs through Python Scripts, one needs to install [requests](https://docs.python-requests.org/en/latest/):
+Users can access our server with Apollo and LGSVL deployed through our provided REST APIs. To call the APIs through Python Scripts, one needs to install [requests](https://docs.python-requests.org/en/latest/):
 
 ```sh
 $ python -m pip install requests
@@ -70,7 +70,7 @@ Users can see the effects of the environment configuration via this [link](http:
 There are two parameters in **LoadScene API**: the first one is Map, and the second one is the road which the AVUT will drive on.
 
 ```python
-import request
+import requests
 requests.post("http://119.45.188.204:5000/LGSVL/LoadScene?scene=SanFrancisco&road_num=1")
 ```
 Once the scene is loaded, the simulator will show the loaded SanFrancisco Map. See [here](https://github.com/DeepCollision/DeepCollisionData/blob/main/REST%20APIs/example%20figures/loadScene.png).
