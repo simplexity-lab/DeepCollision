@@ -7,7 +7,7 @@ This repository contains:
 
 1. **[algorithms](https://github.com/simplexity-lab/DeepCollision/tree/main/algorithms)** - The algorithm of DeepCollision, which includes pseudocode for DQN-Based environment configuration and the DQN hyperparameter settings;
 2. **[pilot-study](https://github.com/simplexity-lab/DeepCollision/tree/main/pilot-study)** - All the raw data and plots for the pilot study;
-3. **[formal-experiment](https://github.com/simplexity-lab/DeepCollision/tree/main/formal-experiment)** - A dataset contains all the raw data and analysis results for the formal experiment;
+3. **[formal-experiment](https://github.com/simplexity-lab/DeepCollision/tree/main/formal-experiment)** - A dataset contains all the raw data for analysis and the scenarios with detailed demand values;
 4. **[rest-api](https://github.com/simplexity-lab/DeepCollision/tree/main/rest-api)** - The REST API endpoints for environment configuration and one [example](https://github.com/simplexity-lab/DeepCollision/blob/main/rest-api/README.md) to show the usage of the APIs.
 
 <!-- > To facilitate reviewing our proposed approach, reviewers please refer to the corresponding data in this repository:<br/>
@@ -34,7 +34,7 @@ This repository contains:
 
 **DeepCollision** learns environment configurations to maximize collisions of an Autonomous Vehicle Under Test (AVUT). As shown in the following figure, DeepCollision employs a *Simulator* (e.g., **[LGSVL](https://www.svlsimulator.com/)**) to simulate the *Testing Environment* comprising the AVUT and its operating environment. DeepCollision also integrates with an *Autopilot Algorithm Platform* (e.g., the Baidu **[Apollo](https://github.com/ApolloAuto/apollo)**) deployed on the AVUT to enable its autonomous driving.
 
-<div align=center><img src="https://github.com/simplexity-lab/DeepCollision/blob/main/figures/Overview.png" style="zoom:20%" /></div>
+<div align=center><img src="https://github.com/simplexity-lab/DeepCollision/blob/main/figures/Overview.png" width="600" /></div>
 
 **DeepCollision** employs a DQN component to generate a set of actions to configure the environment of the AVUT, e.g., weather condition, time of day. At each time step t, the DQN component observes a state S<sub>t</sub> describing the current states of the AVUT and its environment. With the state, DeepCollision decides an action A<sub>t</sub> based on the Q-network with the policy <a href="https://www.codecogs.com/eqnedit.php?latex=\pi" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\pi" title="\pi" /></a>. With our developed *Environment Configuration REST API*, such an action A<sub>t</sub> can be considered as an HTTP request for accessing the simulator to introduce new environment configurations. 
 
@@ -54,11 +54,53 @@ To view all the implemented environment configuration REST API endpoints, please
 ### Usage
 
 #### Prerequisite
-Users can access servers with Apollo and LGSVL deployed through our provided REST APIs. To call the APIs through Python Scripts, one need to install [requests](https://pypi.org/project/requests/):
+Users can access servers with Apollo and LGSVL deployed through our provided REST APIs. To call the APIs through Python Scripts, one needs to install [requests](https://pypi.org/project/requests/):
 
 ```sh
 $ python -m pip install requests
 ```
+
+<!-- #### Example -->
+#### Step 1: Load scene and generate AVUT's initial position
+
+There are two parameters in **LoadScene API**: the first one is Map, and the second one is the road which the AVUT will drive on.
+
+```python
+import request
+requests.post("http://119.45.188.204:5000/LGSVL/LoadScene?scene=SanFrancisco&road_num=1")
+```
+Once the scene is loaded, the simulator will show the loaded SanFrancisco Map. See [here](https://github.com/DeepCollision/DeepCollisionData/blob/main/REST%20APIs/example%20figures/loadScene.png).
+#### Step 2: Configure the operating environment
+
+Set rain level to light rain.
+
+```python
+requests.post("http://119.45.188.204:5000/LGSVL/Control/Weather/Rain?rain_level=Light")
+```
+Once the weather of rain is configured, it will rain in the simulator. See [here](https://github.com/DeepCollision/DeepCollisionData/blob/main/REST%20APIs/example%20figures/HeavyRain.png).
+#### Step 3: Get state returned
+
+```python
+r = requests.get("http://192.168.50.81:5000/LGSVL/Status/Environment/State")
+a = r.json()
+#### State returned after one configuration action executed.
+state = np.zeros(12)
+state[0] = a['x']
+state[1] = a['y']
+state[2] = a['z']
+state[3] = a['rain']
+state[4] = a['fog']
+state[5] = a['wetness']
+state[6] = a['timeofday']
+state[7] = a['signal']
+state[8] = a['rx']
+state[9] = a['ry']
+state[10] = a['rz']
+state[11] = a['speed']
+```
+The returned state will be used as the new state S<sub>t+1</sub>. Users can also use other GET method to obtain state like *GPS Data*, *EGO vehicle status*.
+
+
 
 ## Related Efforts
 
