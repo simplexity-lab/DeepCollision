@@ -6,42 +6,63 @@
 > You can refer it to write your own Python programs.<br/>
 > Also we provide a [video](https://github.com/DeepCollision/DeepCollisionData/blob/main/REST%20APIs/Demo.mkv) to show an running example.
 
-### Step 1: Load scene and generate AVUT's position
+### Prerequisite
+Users can access our server with Apollo and LGSVL deployed through our provided REST APIs. To call the APIs through Python Scripts, one needs to install [requests](https://docs.python-requests.org/en/latest/):
+
+```sh
+$ python -m pip install requests
+```
+
+### Visualization
+
+We have integrated the REST APIs into LGSVL and Apollo and put the into online server, users can see the effects of the environment configuration following the below instructions.
+- Open Apollo Dreamviewer in browser by navigating to this [link (http://101.35.135.164:8888/)](http://101.35.135.164:8888/).
+![image](https://user-images.githubusercontent.com/26716009/146319148-5825df37-e8f4-44be-8271-73edd9dff311.png)
+
+- Select the **Lincoln2017MKZ** vehicle and **San Francisco** map in the top right corner.
+
+- Enable **Localization**, **Transform**, **Perception**, **Traffic Light**, **Planning**, **Prediction**, **Routing**, and **Control** modules.
+
+
+<!-- #### Example -->
+### Step 1: Load scene and generate AVUT's initial position
 
 There are two parameters in **LoadScene API**: the first one is Map, and the second one is the road which the AVUT will drive on.
 
 ```python
-import request
-requests.post("http://119.45.188.204:5000/LGSVL/LoadScene?scene=SanFrancisco&road_num=1")
+import requests
+requests.post("http://101.35.135.164:5000/LGSVL/LoadScene?scene=SanFrancisco&road_num=1")
 ```
-Once the scene is loaded, the simulator will show the loaded SanFrancisco Map. See [here](https://github.com/DeepCollision/DeepCollisionData/blob/main/REST%20APIs/example%20figures/loadScene.png).
+Once the scene is loaded, the loaded vehicle and map will show in Apollo Dreamviewer.
+![image](https://user-images.githubusercontent.com/26716009/146320798-a3164a71-2db7-469e-b004-4834acd0a906.png)
+
 ### Step 2: Configure the operating environment
 
 Set rain level to light rain.
 
 ```python
-requests.post("http://119.45.188.204:5000/LGSVL/Control/Weather/Rain?rain_level=Light")
+requests.post("http://101.35.135.164:5000/LGSVL/Control/Weather/Rain?rain_level=Light")
 ```
 Once the weather of rain is configured, it will rain in the simulator. See [here](https://github.com/DeepCollision/DeepCollisionData/blob/main/REST%20APIs/example%20figures/HeavyRain.png).
 ### Step 3: Get state returned
 
 ```python
-    r = requests.get("http://192.168.50.81:5000/LGSVL/Status/Environment/State")
-    a = r.json()
-    #### State returned after one configuration action executed.
-    state = np.zeros(12)
-    state[0] = a['x']
-    state[1] = a['y']
-    state[2] = a['z']
-    state[3] = a['rain']
-    state[4] = a['fog']
-    state[5] = a['wetness']
-    state[6] = a['timeofday']
-    state[7] = a['signal']
-    state[8] = a['rx']
-    state[9] = a['ry']
-    state[10] = a['rz']
-    state[11] = a['speed']
+r = requests.get("http://101.35.135.164:5000/LGSVL/Status/Environment/State")
+a = r.json()
+#### State returned after one configuration action executed.
+state = np.zeros(12)
+state[0] = a['x']
+state[1] = a['y']
+state[2] = a['z']
+state[3] = a['rain']
+state[4] = a['fog']
+state[5] = a['wetness']
+state[6] = a['timeofday']
+state[7] = a['signal']
+state[8] = a['rx']
+state[9] = a['ry']
+state[10] = a['rz']
+state[11] = a['speed']
 ```
 The returned state will be used as the new state S<sub>t+1</sub>. Users can also use other GET method to obtain state like *GPS Data*, *EGO vehicle status*.
 
