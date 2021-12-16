@@ -194,6 +194,13 @@ http://101.35.135.164:5000/LGSVL/Control/Agents/NPCVehicle/NPCVehicleMaintainLan
 http://101.35.135.164:5000/LGSVL/Control/Agents/NPCVehicle/NPCVehicleMaintainLane?which_lane=Current_Lane&which_car=BoxTruck
 
 6.3. NPC Vehicle Parked On Lane
+http://101.35.135.164:5000/LGSVL/Control/Agents/NPCVehicle/NPCVehicleParked?which_lane=Current_Lane&which_car=BoxTruck
+  
+6.4. NPC Vehicle Overtaking
+http://101.35.135.164:5000/LGSVL/Control/Agents/NPCVehicle/NPCVehicleOvertaking
+
+6.5. NPC Vehicle Road Crossing
+http://101.35.135.164:5000/LGSVL/Control/Agents/NPCVehicle/NPCVehicleRoadCrossing
 
 **7. Pedestrians**  
 7.1. Pedestrian walk on left lane  
