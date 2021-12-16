@@ -62,7 +62,7 @@ $ python -m pip install requests
 
 #### Visualization
 
-http://101.35.135.164:8888/
+Users can see the effects of the environment configuration via this [link](http://101.35.135.164:8888/).
 
 <!-- #### Example -->
 #### Step 1: Load scene and generate AVUT's initial position
