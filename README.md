@@ -52,6 +52,7 @@ More details of Hyperparameters of DQN used in DeepCollision can be accessed her
 To view all the implemented environment configuration REST API endpoints, please look at [full-list](https://github.com/simplexity-lab/DeepCollision/blob/main/rest-api/README.md).
 
 ### Usage
+To see the details of this example, please look at [rest-api-example](https://github.com/simplexity-lab/DeepCollision/tree/main/rest-api).
 
 #### Prerequisite
 Users can access our server with Apollo and LGSVL deployed through our provided REST APIs. To call the APIs through Python Scripts, one needs to install [requests](https://docs.python-requests.org/en/latest/):
