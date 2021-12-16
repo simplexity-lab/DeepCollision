@@ -60,6 +60,10 @@ Users can access servers with Apollo and LGSVL deployed through our provided RES
 $ python -m pip install requests
 ```
 
+#### Visualization
+
+http://101.35.135.164:8888/
+
 <!-- #### Example -->
 #### Step 1: Load scene and generate AVUT's initial position
 
