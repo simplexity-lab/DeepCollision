@@ -203,9 +203,9 @@ http://101.35.135.164:5000/LGSVL/Control/Agents/Pedestrians/WalkRandomly?which_l
 7.3. Pedestrian walk on current lane  
 http://101.35.135.164:5000/LGSVL/Control/Agents/Pedestrians/WalkRandomly?which_lane=Current_Lane  
 
-### Objects control
+<!-- ### Objects control
 **8. Traffic Light**  
-http://101.35.135.164:5000/LGSVL/Control/ControllableObjects/TrafficLight  
+http://101.35.135.164:5000/LGSVL/Control/ControllableObjects/TrafficLight   -->
 ## Status API [GET]
 ### EGO Vehicle Data
 **1. Get Collision Information**  
