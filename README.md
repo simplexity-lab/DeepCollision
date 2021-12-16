@@ -62,7 +62,7 @@ $ python -m pip install requests
 
 #### Visualization
 
-Users can see the effects of the environment configuration via this [link](http://101.35.135.164:8888/).
+We have integrated the REST APIs into LGSVL and Apollo and put the into online server, users can see the effects of the environment configuration via this [link](http://101.35.135.164:8888/).
 
 <!-- #### Example -->
 #### Step 1: Load scene and generate AVUT's initial position
@@ -71,7 +71,7 @@ There are two parameters in **LoadScene API**: the first one is Map, and the sec
 
 ```python
 import requests
-requests.post("http://119.45.188.204:5000/LGSVL/LoadScene?scene=SanFrancisco&road_num=1")
+requests.post("http://101.35.135.164:5000/LGSVL/LoadScene?scene=SanFrancisco&road_num=1")
 ```
 Once the scene is loaded, the simulator will show the loaded SanFrancisco Map. See [here](https://github.com/DeepCollision/DeepCollisionData/blob/main/REST%20APIs/example%20figures/loadScene.png).
 #### Step 2: Configure the operating environment
@@ -79,13 +79,13 @@ Once the scene is loaded, the simulator will show the loaded SanFrancisco Map. S
 Set rain level to light rain.
 
 ```python
-requests.post("http://119.45.188.204:5000/LGSVL/Control/Weather/Rain?rain_level=Light")
+requests.post("http://101.35.135.164:5000/LGSVL/Control/Weather/Rain?rain_level=Light")
 ```
 Once the weather of rain is configured, it will rain in the simulator. See [here](https://github.com/DeepCollision/DeepCollisionData/blob/main/REST%20APIs/example%20figures/HeavyRain.png).
 #### Step 3: Get state returned
 
 ```python
-r = requests.get("http://192.168.50.81:5000/LGSVL/Status/Environment/State")
+r = requests.get("http://101.35.135.164:5000/LGSVL/Status/Environment/State")
 a = r.json()
 #### State returned after one configuration action executed.
 state = np.zeros(12)
