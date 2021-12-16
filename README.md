@@ -53,6 +53,13 @@ To view all the implemented environment configuration REST API endpoints, please
 
 ### Usage
 
+#### Prerequisite
+Users can access servers with Apollo and LGSVL deployed through our provided REST APIs. To call the APIs through Python Scripts, one need to install [requests](https://pypi.org/project/requests/):
+
+```sh
+$ python -m pip install requests
+```
+
 ## Related Efforts
 
 - [LiveTCM](https://github.com/simplexity-lab/LiveTCM): Restricted Natural Language and Model-based Adaptive Test Generation for Autonomous Driving
