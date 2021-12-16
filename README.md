@@ -46,7 +46,7 @@ At each time step t, the information about the AVUT (e.g., its driving and colli
 
 More details of Hyperparameters of DQN used in DeepCollision can be accessed here [hyperparameter settings](https://github.com/simplexity-lab/DeepCollision/blob/main/algorithms/figures/hyperparameter_settings.png).
 
-## REST API Endpoints
+## DeepCollision Environment Configuration API
 
 ### REST API List
 To view all the implemented environment configuration REST API endpoints, please look at [full-list](https://github.com/simplexity-lab/DeepCollision/blob/main/rest-api/README.md).
