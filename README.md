@@ -19,7 +19,7 @@ This repository contains:
 ## Table of Contents
 - [Contributions](#contributions)
 - [Overview of DeepCollision](#overview-of-deepcollision)
-- [REST API Endpoints](#rest-api-endpoints)
+- [DeepCollision Environment Configuration API](#deepCollision-environment-configuration-api)
   - [REST API List](#rest-api-list)
   - [Usage](#usage)
 - [Related Efforts](#related-efforts)
