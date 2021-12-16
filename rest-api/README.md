@@ -193,7 +193,7 @@ http://101.35.135.164:5000/LGSVL/Control/Agents/NPCVehicle/NPCVehicleMaintainLan
 
 http://101.35.135.164:5000/LGSVL/Control/Agents/NPCVehicle/NPCVehicleMaintainLane?which_lane=Current_Lane&which_car=BoxTruck
 
-6.2. NPC Vehicle Stop On Lane
+6.3. NPC Vehicle Parked On Lane
 
 **7. Pedestrians**  
 7.1. Pedestrian walk on left lane  
