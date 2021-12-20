@@ -77,7 +77,7 @@ There are two parameters in **LoadScene API**: the first one is Map, and the sec
 import requests
 requests.post("http://101.35.135.164:5000/LGSVL/LoadScene?scene=SanFrancisco&road_num=1")
 ```
-Once the scene is loaded, the simulator will show the loaded SanFrancisco Map. See [here](https://github.com/DeepCollision/DeepCollisionData/blob/main/REST%20APIs/example%20figures/loadScene.png).
+Once the scene is loaded, the simulator will show the loaded SanFrancisco Map. See [here](https://github.com/simplexity-lab/DeepCollision/blob/main/rest-api/figures/loadScene.png).
 #### Step 2: Configure the operating environment
 
 Set rain level to light rain.
@@ -85,7 +85,7 @@ Set rain level to light rain.
 ```python
 requests.post("http://101.35.135.164:5000/LGSVL/Control/Weather/Rain?rain_level=Light")
 ```
-Once the weather of rain is configured, it will rain in the simulator. See [here](https://github.com/DeepCollision/DeepCollisionData/blob/main/REST%20APIs/example%20figures/HeavyRain.png).
+Once the weather of rain is configured, it will rain in the simulator. See [here](https://github.com/simplexity-lab/DeepCollision/blob/main/rest-api/figures/HeavyRain.png).
 #### Step 3: Get state returned
 
 ```python
