@@ -4,7 +4,7 @@
 
 > This section is an example demonstrating how to use **DeepCollision REST APIs** for environment parameter configurations.<br/>
 > You can refer it to write your own Python programs.<br/>
-> Also we provide a [video](https://www.bilibili.com/video/bv18a411k7kt) to show an running example.
+> Also we provide a [video](https://www.bilibili.com/video/BV1DY411W7Vo/) to show an running example.
 
 ### Prerequisite
 Users can access our server with Apollo and LGSVL deployed through our provided REST APIs. To call the APIs through Python Scripts, one needs to install [requests](https://docs.python-requests.org/en/latest/):
