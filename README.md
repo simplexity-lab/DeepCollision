@@ -54,6 +54,8 @@ To view all the implemented environment configuration REST API endpoints, please
 ### Usage
 To see detialed instructions of using REST APIs, please look at [rest-api-example](https://github.com/simplexity-lab/DeepCollision/tree/main/rest-api).
 
+Also we provide a [running example](https://www.bilibili.com/video/BV1DY411W7Vo/) in Bilibili.
+
 #### Prerequisite
 Users can access our server with Apollo and LGSVL deployed through our provided REST APIs. To call the APIs through Python Scripts, one needs to install [requests](https://docs.python-requests.org/en/latest/):
 
