@@ -2,6 +2,7 @@
 # DeepCollision: Learning Configurations of Operating Environment of Autonomous Vehicles to Maximize their Collisions
 
 > To facilitate reviewing our proposed approach, reviewers please refer to the corresponding data in this repository.<br/>
+> The replication package that supports the findings of this study is also available in Zenodo with the identifier data DOI: https://doi.org/10.5281/zenodo.5906634.
 
 This repository contains:
 
