@@ -24,8 +24,9 @@ This repository contains:
   - [REST API List](#rest-api-list)
   - [Usage](#usage)
 - [Related Efforts](#related-efforts)
-- [Maintainers](#maintainers)
 - [Paper](#paper)
+- [Maintainers](#maintainers)
+
 ## Contributions
 1. With the aim to test ADSs, we propose a novel RL-based approach to learn operating environment configurations of autonomous vehicles, including formalizing environment configuration learning as an MDP and adopting DQN as the RL solution;
 2. To handle the environment configuration process of an autonomous vehicle, we present a lightweight and extensible **DeepCollision** framework providing 52 REST API endpoints to configure the environment and obtain states of both the autonomous vehicle and its operating environment; and
@@ -118,10 +119,12 @@ The returned state will be used as the new state S<sub>t+1</sub>. Users can also
 - [LiveTCM](https://github.com/simplexity-lab/LiveTCM): Restricted Natural Language and Model-based Adaptive Test Generation for Autonomous Driving
 - [SPECTRE](https://github.com/simplexity-lab/SPECTRE): Search-Based Selection and Prioritization of Test Scenarios for Autonomous Driving Systems
 
+## Paper
+Lu, Chengjie, et al. "Learning Configurations of Operating Environment of Autonomous Vehicles to Maximize their Collisions." IEEE Transactions on Software Engineering (2022).
+https://doi.org/10.1109/TSE.2022.3150788.
+
 ## Maintainers
 [@ChengjieLu](https://github.com/ForresterLu),
 [@YizeShi](https://github.com/Misaka11)
 
-## Paper
-Lu, Chengjie, et al. "Learning Configurations of Operating Environment of Autonomous Vehicles to Maximize their Collisions." IEEE Transactions on Software Engineering (2022).
-https://doi.org/10.1109/TSE.2022.3150788.
+
