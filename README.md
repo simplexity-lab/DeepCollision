@@ -123,4 +123,5 @@ The returned state will be used as the new state S<sub>t+1</sub>. Users can also
 [@YizeShi](https://github.com/Misaka11)
 
 ## Paper
-C. Lu et al., "Learning Configurations of Operating Environment of Autonomous Vehicles to Maximize their Collisions," in IEEE Transactions on Software Engineering, doi: 10.1109/TSE.2022.3150788.
+Lu, Chengjie, et al. "Learning Configurations of Operating Environment of Autonomous Vehicles to Maximize their Collisions." IEEE Transactions on Software Engineering (2022).
+https://doi.org/10.1109/TSE.2022.3150788.
