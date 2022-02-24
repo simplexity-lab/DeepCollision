@@ -25,7 +25,7 @@ This repository contains:
   - [Usage](#usage)
 - [Related Efforts](#related-efforts)
 - [Maintainers](#maintainers)
-
+- [Paper](#paper)
 ## Contributions
 1. With the aim to test ADSs, we propose a novel RL-based approach to learn operating environment configurations of autonomous vehicles, including formalizing environment configuration learning as an MDP and adopting DQN as the RL solution;
 2. To handle the environment configuration process of an autonomous vehicle, we present a lightweight and extensible **DeepCollision** framework providing 52 REST API endpoints to configure the environment and obtain states of both the autonomous vehicle and its operating environment; and
@@ -121,3 +121,6 @@ The returned state will be used as the new state S<sub>t+1</sub>. Users can also
 ## Maintainers
 [@ChengjieLu](https://github.com/ForresterLu),
 [@YizeShi](https://github.com/Misaka11)
+
+## Paper
+C. Lu et al., "Learning Configurations of Operating Environment of Autonomous Vehicles to Maximize their Collisions," in IEEE Transactions on Software Engineering, doi: 10.1109/TSE.2022.3150788.
