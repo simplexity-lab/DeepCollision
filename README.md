@@ -9,7 +9,8 @@ This repository contains:
 1. **[algorithms](https://github.com/simplexity-lab/DeepCollision/tree/main/algorithms)** - The algorithm of DeepCollision, which includes the network architecture and the DQN hyperparameter settings;
 2. **[pilot-study](https://github.com/simplexity-lab/DeepCollision/tree/main/pilot-study)** - All the raw data and plots for the pilot study;
 3. **[formal-experiment](https://github.com/simplexity-lab/DeepCollision/tree/main/formal-experiment)** - A dataset contains all the raw data for analysis and the scenarios with detailed demand values;
-4. **[rest-api](https://github.com/simplexity-lab/DeepCollision/tree/main/rest-api)** - The REST API endpoints for environment configuration and one [example](https://github.com/simplexity-lab/DeepCollision/blob/main/rest-api/README.md) to show the usage of the APIs.
+4. **[rest-api](https://github.com/simplexity-lab/DeepCollision/tree/main/rest-api)** - The REST API endpoints for environment configuration and one [example](https://github.com/simplexity-lab/DeepCollision/blob/main/rest-api/README.md) to show the usage of the APIs;
+5. **[deepcollision-project](https://github.com/simplexity-lab/DeepCollision/tree/main/deepcollision-project)** - The source code of DeepCollision, Random and Greedy baselines, as well as REST APIs.
 
 <!-- > To facilitate reviewing our proposed approach, reviewers please refer to the corresponding data in this repository:<br/>
 > **[algorithms](https://github.com/simplexity-lab/DeepCollision/tree/main/algorithms)**, pseudocode for DeepCollision and Hyper-parameters of DQN in DeepCollision;<br/>
