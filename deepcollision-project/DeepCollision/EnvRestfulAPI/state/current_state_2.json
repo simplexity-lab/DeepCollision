@@ -1,0 +1,59 @@
+{
+    "eb4adf45-a5b0-4a6c-b20e-02bf54b8f6f9": {
+        "model": "Lincoln2017MKZ (Apollo 5.0)",
+        "name:": "Ego0",
+        "obj_color": "Vector(-1, -1, -1)",
+        "positionX": -333.260528564453,
+        "positionY": 10.1234216690063,
+        "positionZ": 190.394607543945,
+        "rotationX": 359.98193359375,
+        "rotationY": 90.1074676513672,
+        "rotationZ": 0.00422968063503504,
+        "velocityX": 9.13332080841064,
+        "velocityY": 0.000299952924251556,
+        "velocityZ": -0.0180045589804649,
+        "angularVelocityX": 4.43616263510194e-05,
+        "angularVelocityY": 0.00175697740633041,
+        "angularVelocityZ": 0.000428468541940674
+    },
+    "cb41b6c5-3916-48c7-b9ba-f78b33c0a5cf": {
+        "model": "Bob",
+        "name:": "Pedestrian0",
+        "obj_color": "Vector(-1, -1, -1)",
+        "positionX": -457.062072753906,
+        "positionY": 10.1278505325317,
+        "positionZ": 188.009841918945,
+        "rotationX": 0,
+        "rotationY": 91.1034927368164,
+        "rotationZ": 0,
+        "velocityX": 0,
+        "velocityY": 0,
+        "velocityZ": 0,
+        "angularVelocityX": 0,
+        "angularVelocityY": 0,
+        "angularVelocityZ": 0
+    },
+    "32f0e85d-6e4f-4ab4-8ced-91bb7d9b7b6b": {
+        "model": "Bob",
+        "name:": "Pedestrian0",
+        "obj_color": "Vector(-1, -1, -1)",
+        "positionX": -369.771179199219,
+        "positionY": 10.1278476715088,
+        "positionZ": 190.32356262207,
+        "rotationX": 1.13748037620098e-05,
+        "rotationY": 292.995086669922,
+        "rotationZ": 2.55453551289975e-06,
+        "velocityX": 0,
+        "velocityY": 0,
+        "velocityZ": 0,
+        "angularVelocityX": 0,
+        "angularVelocityY": 0,
+        "angularVelocityZ": 0
+    },
+    "worldEffect": {
+        "rain": 0,
+        "fog": 0,
+        "wetness": 0,
+        "time": 12
+    }
+}

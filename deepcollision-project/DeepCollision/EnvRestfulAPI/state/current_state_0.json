@@ -1,0 +1,25 @@
+{
+    "eb4adf45-a5b0-4a6c-b20e-02bf54b8f6f9": {
+        "model": "Lincoln2017MKZ (Apollo 5.0)",
+        "name:": "Ego0",
+        "obj_color": "Vector(-1, -1, -1)",
+        "positionX": -440.301513671875,
+        "positionY": 10.1243448257446,
+        "positionZ": 215.132461547852,
+        "rotationX": 359.796630859375,
+        "rotationY": 211.561767578125,
+        "rotationZ": 359.978454589844,
+        "velocityX": -2.03418159484863,
+        "velocityY": 6.13406300544739e-05,
+        "velocityZ": -3.35959482192993,
+        "angularVelocityX": -0.00801913160830736,
+        "angularVelocityY": -0.0210051089525223,
+        "angularVelocityZ": 0.005504768807441
+    },
+    "worldEffect": {
+        "rain": 0,
+        "fog": 0,
+        "wetness": 0,
+        "time": 12
+    }
+}
