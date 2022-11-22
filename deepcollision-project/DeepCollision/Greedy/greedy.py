@@ -7,13 +7,6 @@ from DeepCollision.DQNEnvironment.utils import *
 
 requests.post("http://192.168.50.81:5000/LGSVL/LoadScene?scene=SanFrancisco&road_num=1")
 
-HOST = '192.168.50.51'  # or 'localhost'
-PORT = 6001
-ADDR = (HOST, PORT)
-
-ss = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-ss.connect(ADDR)
-
 
 def get_environment_state():
     r = requests.get("http://192.168.50.81:5000/LGSVL/Status/Environment/State")
@@ -108,83 +101,115 @@ def calculate_reward(api_id):
     return observation, collision_probability, episode_done, collision_info, time_step_probability_list
 
 
-# title = ["Episode", "State", "Action", "Reward", "Probability", "Done"]
-# df_title = pd.DataFrame([title])
-# file_name = str(int(time.time()))
-# df_title.to_csv('./greedy.csv', mode='w', header=False,
-#                 index=None)
+# title = ["Episode", "Step", "State", "Action", "Probability", "Done"]
+title = ["Episode", "Step", "State", "Action", "Collision_Probability", "Action_Description", "Ego_Vehicle_Ops_Value", "Ego_Vehicle_Pose", "Obstacle_Info", "Traffic_Light", "Collision_Probability_Per_Time_Step",
+         "Done"]
+df_title = pd.DataFrame([title])
+file_tag = str(int(time.time()))
 
-def greedy(opt, road_num):
+HOST = '192.168.50.51'  # or 'localhost'
+PORT = 6001
+ADDR = (HOST, PORT)
+
+ss = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+ss.connect(ADDR)
+
+
+def greedy(road_num, opt):
     i_episode = 0
     step = 0
-    previous_cp = 0
-    api_id = random.randint(0, N_ACTIONS - 1)
-    path = '../ExperimentData/Greedy/greedy_{}_road{}_timestamp{}.csv'.format(opt, road_num, str(time.time())) + '.csv'
-    df_title.to_csv(path, mode='w', header=False, index=None)
+    file_name = './greedy_road{}_{}s.csv'.format(road_num, opt)
+    df_title.to_csv(file_name, mode='w', header=False,
+                    index=None)
+
+    # api_id = random.randint(0, N_ACTIONS - 1)
+    # path = '../ExperimentData/Greedy/greedy_{}_road{}_timestamp{}.csv'.format(opt, road_num, str(time.time())) + '.csv'
+    # df_title.to_csv(path, mode='w', header=False, index=None)
+    requests.post("http://192.168.50.81:5000/LGSVL/LoadScene?scene=SanFrancisco&road_num=" + str(road_num))
+    requests.post("http://192.168.50.81:5000/LGSVL/SaveState?ID={}".format(step))
     while True:
-        s = get_environment_state()
-        requests.post("http://192.168.50.81:5000/LGSVL/SaveState?ID={}".format(step))
-        # api_id = init_action
-        ss.send(json.dumps(['start']).encode('utf-8'))
-        _, probability, done, _, probability_list_in_one_action = calculate_reward(api_id)
-        ss.send(json.dumps(['stop']).encode('utf-8'))
-
-        if probability < previous_cp and step > 0:
+        pro_max = 0
+        max_api = 0
+        for api in range(0, N_ACTIONS):
+            _, probability, done, _, probability_list_in_one_action = calculate_reward(api)
+            if probability > pro_max:
+                pro_max = probability
+                max_api = api
+            # if api < N_STATES:
             requests.post("http://192.168.50.81:5000/LGSVL/RollBack?ID={}".format(step))
-            while True:
-                temp_id = random.randint(0, N_ACTIONS - 1)
-                if temp_id != api_id:
-                    api_id = temp_id
-                    break
-            _, reward, probability, done, _ = calculate_reward(api_id)
-        else:
-            previous_cp = probability
-            print('iteration, api_id, probability, done: ', i_episode, api_id, probability, done)
 
-            cmd_res_size = ss.recv(1024)
-            received_size = 0
-            received_data = b''
-            while received_size < int(cmd_res_size.decode()):
-                cmd_res = ss.recv(1024)
-                received_size += len(cmd_res)
-                received_data += cmd_res
-            received_data = json.loads(received_data.decode('utf-8'))
-            state_arr = received_data['state_arr']
-            pose_arr = received_data['pose_arr']
-            obstacle_arr = received_data['obstacle_arr']
-            traffic_light = received_data['traffic_light']
-            pd.DataFrame([[i_episode, step, s, api_id, probability, scenario_space[str(api_id)], state_arr, pose_arr, obstacle_arr, traffic_light, probability_list_in_one_action, done]]).to_csv(
-                path, mode='a', header=False, index=None)
+        s = get_environment_state()
+        ss.send(json.dumps(['start']).encode('utf-8'))
+        _, probability, done, _, probability_list_in_one_action = calculate_reward(max_api)
+        ss.send(json.dumps(['stop']).encode('utf-8'))
+        cmd_res_size = ss.recv(1024)
+        received_size = 0
+        received_data = b''
+        while received_size < int(cmd_res_size.decode()):
+            cmd_res = ss.recv(1024)
+            received_size += len(cmd_res)
+            received_data += cmd_res
 
-            # pd.DataFrame([[i_episode, s, api_id, reward, probability, done]]).to_csv(
-            #     './greedy.csv', mode='a', header=False,
-            #     index=None)
+        # print(received_data)
+        # state_arr.decode('utf-8')
+        received_data = json.loads(received_data.decode('utf-8'))
+        state_arr = received_data['state_arr']
+        pose_arr = received_data['pose_arr']
+        obstacle_arr = received_data['obstacle_arr']
+        traffic_light = received_data['traffic_light']
+
+        print('episode, step, api_id, probability, done: ', i_episode, step, max_api, probability, done)
+        # pd.DataFrame([[i_episode, step, s, max_api, probability, done]]).to_csv(
+        #     file_name, mode='a', header=False,
+        #     index=None)
+        pd.DataFrame([[i_episode, step, s, max_api, probability, scenario_space[str(max_api)], state_arr, pose_arr,
+                       obstacle_arr, traffic_light, probability_list_in_one_action, done]]).to_csv(
+            file_name, mode='a', header=False, index=None)
 
         step += 1
+        requests.post("http://192.168.50.81:5000/LGSVL/SaveState?ID={}".format(step))
 
         if done:
-            # break
             requests.post("http://192.168.50.81:5000/LGSVL/LoadScene?scene=SanFrancisco&road_num=" + road_num)
             i_episode += 1
             step = 0
-            previous_cp = 0
-            api_id = random.randint(0, N_ACTIONS - 1)
-            if i_episode == 31:
+            if i_episode == 1:
                 break
 
+        # if done:
+        #     # break
+        #     requests.post("http://192.168.50.81:5000/LGSVL/LoadScene?scene=SanFrancisco&road_num=" + road_num)
+        #     i_episode += 1
+        #     step = 0
+        #     previous_cp = 0
+        #     api_id = random.randint(0, N_ACTIONS - 1)
+        #     if i_episode == 31:
+        #         break
+
+
+# greedy(1)
+time_list = [4, 6, 8, 10]
+road_num_list = ["1", "2", "3", "4"]
 
 if __name__ == '__main__':
-    title = ["Episode", "Step", "State", "Action", "Reward", "Collision_Probability", "Action_Description",
-             "Ego_Vehicle_Ops_Value", "Ego_Vehicle_Pose", "Obstacle_Info", "Traffic_Light",
-             "Collision_Probability_Per_Time_Step",
-             "Done"]
-    df_title = pd.DataFrame([title])
-
-    time_list = [4, 6, 8, 10]
-    road_num_list = ["1", "2", "3", "4"]
-
     for t in time_list:
         OPT = str(t)
         requests.post("http://192.168.50.81:5000/LGSVL/SetObTime?observation_time=" + OPT)
-        for rn in road_num_list:
-            greedy(OPT, rn)
+        for road_n in road_num_list:
+            greedy(road_n, OPT)
+
+# if __name__ == '__main__':
+#     title = ["Episode", "Step", "State", "Action", "Reward", "Collision_Probability", "Action_Description",
+#              "Ego_Vehicle_Ops_Value", "Ego_Vehicle_Pose", "Obstacle_Info", "Traffic_Light",
+#              "Collision_Probability_Per_Time_Step",
+#              "Done"]
+#     df_title = pd.DataFrame([title])
+#
+#     time_list = [4, 6, 8, 10]
+#     road_num_list = ["1", "2", "3", "4"]
+#
+#     for t in time_list:
+#         OPT = str(t)
+#         requests.post("http://192.168.50.81:5000/LGSVL/SetObTime?observation_time=" + OPT)
+#         for rn in road_num_list:
+#             greedy(OPT, rn)
