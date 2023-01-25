@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5906634.svg)](https://doi.org/10.5281/zenodo.5906634)
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 # DeepCollision: Learning Configurations of Operating Environment of Autonomous Vehicles to Maximize their Collisions
 
